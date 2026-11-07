@@ -3,13 +3,13 @@
 | ID | Требование | Объект |
 |---|---|---|
 | R-01 | Заказ содержит минимум одну позицию. | `OrderPricingService.Calculate` |
-| R-02 | Цена каждой позиции строго больше 0, количество — целое положительное число. | `OrderPricingService.Calculate` |
+| R-02 | Цена каждой позиции строго больше 0, количество - целое положительное число. | `OrderPricingService.Calculate` |
 | R-03 | Сумма до скидок равна сумме `цена × количество` по всем позициям. | `OrderPricingService.Calculate` |
-| R-04 | Скидка по уровню клиента: Regular — 0%, Silver — 5%, Gold — 10%. | `OrderPricingService.Calculate` |
+| R-04 | Скидка по уровню клиента: Regular - 0%, Silver - 5%, Gold - 10%. | `OrderPricingService.Calculate` |
 | R-05 | Купон `SUMMER` без учёта регистра добавляет 5 процентных пунктов; общая скидка не более 15%. | `OrderPricingService.Calculate` |
 | R-06 | Доставка бесплатна при сумме заказа от 5000 включительно, кроме удалённых регионов. | `ShippingService.Calculate` |
-| R-07 | Тариф доставки при массе `≤1 кг` — 200; `>1 и ≤5 кг` — 350; `>5 кг` — 600. Удалённый регион: +300. Отрицательная сумма и неположительная масса запрещены. | `ShippingService.Calculate` |
-| R-08 | Разрешены переходы New→Paid/Cancelled, Paid→Shipped/Cancelled; Shipped и Cancelled — терминальные; повтор того же статуса разрешён. | `OrderStatusService.ChangeStatus` |
+| R-07 | Тариф доставки при массе `≤1 кг` - 200; `>1 и ≤5 кг` - 350; `>5 кг` - 600. Удалённый регион: +300. Отрицательная сумма и неположительная масса запрещены. | `ShippingService.Calculate` |
+| R-08 | Разрешены переходы New→Paid/Cancelled, Paid→Shipped/Cancelled; Shipped и Cancelled - терминальные; повтор того же статуса разрешён. | `OrderStatusService.ChangeStatus` |
 
 **Дополнительно:** скидка округляется до двух знаков `MidpointRounding.AwayFromZero`. Сумма заказа не должна становиться отрицательной. Неизвестный уровень клиента и неизвестные статусы считаются некорректным вводом.
 
